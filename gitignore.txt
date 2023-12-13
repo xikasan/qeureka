@@ -1,0 +1,18 @@
+# python dev
+.pyc
+.idea
+__pycache__/
+
+# mac
+.DS_Store
+
+# build
+build/
+dist/
+xqeureka.egg-info/
+result/
+
+# google colab
+*.ipynb
+*.zip
+git-setup.txt
