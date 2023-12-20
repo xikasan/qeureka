@@ -11,6 +11,7 @@ build/
 dist/
 xqeureka.egg-info/
 result/
+xqeureka.code-workspace
 
 # google colab
 *.ipynb
