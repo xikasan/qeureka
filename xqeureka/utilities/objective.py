@@ -67,7 +67,9 @@ class QuadradicContinuousObjectiveFunction:
             x = np.expand_dims(x, 0)
         
         xs = self.format_input(x)
-        ys = np.tensordot(xs, self.A, axes=2)
+        ys = np.tensordot(xs, self.A, axes=2).tolist()
+        if len(ys) == 1:
+            return ys
         return ys
 
     @staticmethod

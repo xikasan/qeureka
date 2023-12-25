@@ -24,7 +24,9 @@ class BOCS(BOModel):
 
     def fit(self, xs: Vector | Matrix, ys: Vector | Matrix) -> Vector:
         X = expand_statevector(xs)
-        Y = np.expand_dims(ys, -1)
+        Y = np.asarray(ys)
+        if len(Y.shape) == 1:
+            Y = np.expand_dims(ys, -1)
 
         # calc mean and cov of qubo
         A = X.T @ X + np.eye(X.shape[1]) / self.sigma

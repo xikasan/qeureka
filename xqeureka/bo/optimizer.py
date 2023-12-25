@@ -63,7 +63,7 @@ class BlackboxOptimizer:
         if ys is None:
             ys = self.ybuf
         
-        loss = self.model.fit(self.xbuf, self.ybuf)
+        loss = self.model.fit(xs, ys)
         return loss
     
     def sample(self) -> List[Vector]:
