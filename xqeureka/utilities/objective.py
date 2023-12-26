@@ -73,9 +73,9 @@ class QuadradicContinuousObjectiveFunction:
         return ys
 
     @staticmethod
-    def generate(n: int, mu=0., var=1.) -> "QuadradicObjectiveFunction":
+    def generate(n: int, mu=0., var=1.) -> "QuadradicContinuousObjectiveFunction":
         A = np.random.normal(mu, var, (n, 2))
-        b = np.random.normal(mu, var, 1)
+        b = np.random.normal(mu, var, n)
         return QuadradicContinuousObjectiveFunction(A, b)
 
     def format_input(self, x):
@@ -98,3 +98,4 @@ class QuadradicContinuousObjectiveFunction:
     @property
     def n(self) -> int:
         return self._n
+
