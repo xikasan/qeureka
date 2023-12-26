@@ -222,7 +222,7 @@ class ContinuousBlackboxOptimizer(BlackboxOptimizer):
             loss=loss,
             best=self.best
         )
-        if self.is_adaptive:
+        if self.convertor is not None:
             for i, si in enumerate(self.convertor.ss):
                 store_dict[f"s{i}"] = si
         self.logger.store(**store_dict).flush()
